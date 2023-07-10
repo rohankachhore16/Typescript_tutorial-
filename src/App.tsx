@@ -11,6 +11,11 @@ import Button from "./component/EvenProps/Button";
 import Input from "./component/EvenProps/Input";
 import { config } from "process";
 import Container from "./component/EvenProps/Container";
+import { ThemeContextProvider } from "./component/Context/ThemeContext";
+import Box from "./component/Context/Box";
+import { UserContext, UserContextProvider } from "./component/Context/UserContext";
+import User from "./component/state/User";
+import UserContextCompoennt from "./component/Context/User";
 
 function App() {
   const personName = {
@@ -45,11 +50,19 @@ function App() {
         {/* Even<t Props  */}
         {/* <Button handleClick={(event, id) => console.log("Button Click", event, id)} />
         <Input value="" handleInputChange={(event) => console.log(event)} /> */}
-        <Container styels={{ border: "1px solid black", color: "blue", padding: "1rem" }} />
+        {/* <Container styels={{ border: "1px solid black", color: "blue", padding: "1rem" }} /> */}
+
+        {/* <ThemeContextProvider>
+          <Box  />
+        </ThemeContextProvider> */}
+        {/* // userContext Future Value */}
+        <UserContextProvider>
+          <UserContextCompoennt />
+        </UserContextProvider>
+
       </div>
     </>
   );
 }
 
 export default App;
- 
